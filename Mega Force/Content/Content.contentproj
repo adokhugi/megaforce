@@ -1,0 +1,1341 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>4175aa07-3b27-4f4a-9119-ba3c319b05e5</ProjectGuid>
+    <ProjectTypeGuids>{96E2B04D-8817-42c6-938A-82C39BA4D311};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <XnaFrameworkVersion>v2.0</XnaFrameworkVersion>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\$(Platform)\$(Configuration)</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <XnaPlatform>Windows</XnaPlatform>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <XnaPlatform>Windows</XnaPlatform>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.EffectImporter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.FBXImporter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.TextureImporter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Content.Pipeline.XImporter, Version=2.0.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_selectionbar.bmp">
+      <Name>shfo2_selectionbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_battlemenu_default.bmp">
+      <Name>shfo2_battlemenu_default</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_battlemenu_stay.bmp">
+      <Name>shfo2_battlemenu_stay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_battlemenu_attack.bmp">
+      <Name>shfo2_battlemenu_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_battlemenu_magic.bmp">
+      <Name>shfo2_battlemenu_magic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_battlemenu_item.bmp">
+      <Name>shfo2_battlemenu_item</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_smallfont_%25.bmp">
+      <Name>shfo2_smallfont_%25</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_0.bmp">
+      <Name>shfo2_smallfont_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_1.bmp">
+      <Name>shfo2_smallfont_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_2.bmp">
+      <Name>shfo2_smallfont_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_3.bmp">
+      <Name>shfo2_smallfont_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_4.bmp">
+      <Name>shfo2_smallfont_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_5.bmp">
+      <Name>shfo2_smallfont_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_6.bmp">
+      <Name>shfo2_smallfont_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_7.bmp">
+      <Name>shfo2_smallfont_7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_8.bmp">
+      <Name>shfo2_smallfont_8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_9.bmp">
+      <Name>shfo2_smallfont_9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_a.bmp">
+      <Name>shfo2_smallfont_a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_b.bmp">
+      <Name>shfo2_smallfont_b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_c.bmp">
+      <Name>shfo2_smallfont_c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_d.bmp">
+      <Name>shfo2_smallfont_d</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_e.bmp">
+      <Name>shfo2_smallfont_e</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_equipped.bmp">
+      <Name>shfo2_smallfont_equipped</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_f.bmp">
+      <Name>shfo2_smallfont_f</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_g.bmp">
+      <Name>shfo2_smallfont_g</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_h.bmp">
+      <Name>shfo2_smallfont_h</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_i.bmp">
+      <Name>shfo2_smallfont_i</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_j.bmp">
+      <Name>shfo2_smallfont_j</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_k.bmp">
+      <Name>shfo2_smallfont_k</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_l.bmp">
+      <Name>shfo2_smallfont_l</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_m.bmp">
+      <Name>shfo2_smallfont_m</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_n.bmp">
+      <Name>shfo2_smallfont_n</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_o.bmp">
+      <Name>shfo2_smallfont_o</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_p.bmp">
+      <Name>shfo2_smallfont_p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_r.bmp">
+      <Name>shfo2_smallfont_r</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_s.bmp">
+      <Name>shfo2_smallfont_s</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_slash.bmp">
+      <Name>shfo2_smallfont_slash</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_a.bmp">
+      <Name>shfo2_smallfont_small_a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_b.bmp">
+      <Name>shfo2_smallfont_small_b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_c.bmp">
+      <Name>shfo2_smallfont_small_c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_d.bmp">
+      <Name>shfo2_smallfont_small_d</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_e.bmp">
+      <Name>shfo2_smallfont_small_e</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_g.bmp">
+      <Name>shfo2_smallfont_small_g</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_h.bmp">
+      <Name>shfo2_smallfont_small_h</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_i.bmp">
+      <Name>shfo2_smallfont_small_i</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_k.bmp">
+      <Name>shfo2_smallfont_small_k</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_l.bmp">
+      <Name>shfo2_smallfont_small_l</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_n.bmp">
+      <Name>shfo2_smallfont_small_n</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_o.bmp">
+      <Name>shfo2_smallfont_small_o</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_p.bmp">
+      <Name>shfo2_smallfont_small_p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_q.bmp">
+      <Name>shfo2_smallfont_small_q</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_r.bmp">
+      <Name>shfo2_smallfont_small_r</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_s.bmp">
+      <Name>shfo2_smallfont_small_s</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_t.bmp">
+      <Name>shfo2_smallfont_small_t</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_u.bmp">
+      <Name>shfo2_smallfont_small_u</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_v.bmp">
+      <Name>shfo2_smallfont_small_v</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_w.bmp">
+      <Name>shfo2_smallfont_small_w</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_x.bmp">
+      <Name>shfo2_smallfont_small_x</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_small_z.bmp">
+      <Name>shfo2_smallfont_small_z</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_sword.bmp">
+      <Name>shfo2_smallfont_sword</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_t.bmp">
+      <Name>shfo2_smallfont_t</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_u.bmp">
+      <Name>shfo2_smallfont_u</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_v.bmp">
+      <Name>shfo2_smallfont_v</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_w.bmp">
+      <Name>shfo2_smallfont_w</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_x.bmp">
+      <Name>shfo2_smallfont_x</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_y.bmp">
+      <Name>shfo2_smallfont_y</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_smallfont_z.bmp">
+      <Name>shfo2_smallfont_z</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_smallfont_space.bmp">
+      <Name>shfo2_smallfont_space</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_box_bottomleft.bmp">
+      <Name>shfo2_box_bottomleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_bottommiddle.bmp">
+      <Name>shfo2_box_bottommiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_bottomright.bmp">
+      <Name>shfo2_box_bottomright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_middlemiddle.bmp">
+      <Name>shfo2_box_middlemiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_topleft.bmp">
+      <Name>shfo2_box_topleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_topmiddle.bmp">
+      <Name>shfo2_box_topmiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_topright.bmp">
+      <Name>shfo2_box_topright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_box_middleleft.bmp">
+      <Name>shfo2_box_middleleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_middleright.bmp">
+      <Name>shfo2_box_middleright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_smallfont_questionmark.bmp">
+      <Name>shfo2_smallfont_questionmark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_box_black_bottommiddle.bmp">
+      <Name>shfo2_box_black_bottommiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_black_middleleft.bmp">
+      <Name>shfo2_box_black_middleleft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_black_middlemiddle.bmp">
+      <Name>shfo2_box_black_middlemiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_black_middleright.bmp">
+      <Name>shfo2_box_black_middleright</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_box_black_topmiddle.bmp">
+      <Name>shfo2_box_black_topmiddle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_generalmenu_member.bmp">
+      <Name>shfo2_generalmenu_member</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_generalmenu_map.bmp">
+      <Name>shfo2_generalmenu_map</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_generalmenu_speed.bmp">
+      <Name>shfo2_generalmenu_speed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_generalmenu_default.bmp">
+      <Name>shfo2_generalmenu_default</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_generalmenu_quit.bmp">
+      <Name>shfo2_generalmenu_quit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_smallfont_q.bmp">
+      <Name>shfo2_smallfont_q</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_itemmenu_default.bmp">
+      <Name>shfo2_itemmenu_default</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_itemmenu_drop.bmp">
+      <Name>shfo2_itemmenu_drop</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_itemmenu_equip.bmp">
+      <Name>shfo2_itemmenu_equip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_itemmenu_give.bmp">
+      <Name>shfo2_itemmenu_give</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_itemmenu_use.bmp">
+      <Name>shfo2_itemmenu_use</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_itemmagicselectionmenu.bmp">
+      <Name>shfo2_itemmagicselectionmenu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_itemmagicselected.bmp">
+      <Name>shfo2_itemmagicselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_dot.bmp">
+      <Name>shfo2_italicfont_dot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_a.bmp">
+      <Name>shfo2_italicfont_small_a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_e.bmp">
+      <Name>shfo2_italicfont_small_e</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_h.bmp">
+      <Name>shfo2_italicfont_small_h</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_i.bmp">
+      <Name>shfo2_italicfont_small_i</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_m.bmp">
+      <Name>shfo2_italicfont_small_m</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_n.bmp">
+      <Name>shfo2_italicfont_small_n</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_o.bmp">
+      <Name>shfo2_italicfont_small_o</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_t.bmp">
+      <Name>shfo2_italicfont_small_t</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_u.bmp">
+      <Name>shfo2_italicfont_small_u</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_v.bmp">
+      <Name>shfo2_italicfont_small_v</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_space.bmp">
+      <Name>shfo2_italicfont_space</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_y.bmp">
+      <Name>shfo2_italicfont_y</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_0.bmp">
+      <Name>shfo2_italicfont_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_1.bmp">
+      <Name>shfo2_italicfont_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_2.bmp">
+      <Name>shfo2_italicfont_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_3.bmp">
+      <Name>shfo2_italicfont_3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_4.bmp">
+      <Name>shfo2_italicfont_4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_5.bmp">
+      <Name>shfo2_italicfont_5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_6.bmp">
+      <Name>shfo2_italicfont_6</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_7.bmp">
+      <Name>shfo2_italicfont_7</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_8.bmp">
+      <Name>shfo2_italicfont_8</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_9.bmp">
+      <Name>shfo2_italicfont_9</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_a.bmp">
+      <Name>shfo2_italicfont_a</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_b.bmp">
+      <Name>shfo2_italicfont_b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_c.bmp">
+      <Name>shfo2_italicfont_c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_d.bmp">
+      <Name>shfo2_italicfont_d</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_e.bmp">
+      <Name>shfo2_italicfont_e</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_exclamationmark.bmp">
+      <Name>shfo2_italicfont_exclamationmark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_f.bmp">
+      <Name>shfo2_italicfont_f</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_h.bmp">
+      <Name>shfo2_italicfont_h</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_highcomma.bmp">
+      <Name>shfo2_italicfont_highcomma</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_i.bmp">
+      <Name>shfo2_italicfont_i</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_k.bmp">
+      <Name>shfo2_italicfont_k</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_l.bmp">
+      <Name>shfo2_italicfont_l</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_m.bmp">
+      <Name>shfo2_italicfont_m</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_n.bmp">
+      <Name>shfo2_italicfont_n</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_o.bmp">
+      <Name>shfo2_italicfont_o</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_r.bmp">
+      <Name>shfo2_italicfont_r</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_s.bmp">
+      <Name>shfo2_italicfont_s</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_b.bmp">
+      <Name>shfo2_italicfont_small_b</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_c.bmp">
+      <Name>shfo2_italicfont_small_c</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_d.bmp">
+      <Name>shfo2_italicfont_small_d</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_f.bmp">
+      <Name>shfo2_italicfont_small_f</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_g.bmp">
+      <Name>shfo2_italicfont_small_g</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_z.bmp">
+      <Name>shfo2_italicfont_z</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_small_k.bmp">
+      <Name>shfo2_italicfont_small_k</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_l.bmp">
+      <Name>shfo2_italicfont_small_l</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_p.bmp">
+      <Name>shfo2_italicfont_small_p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_r.bmp">
+      <Name>shfo2_italicfont_small_r</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_s.bmp">
+      <Name>shfo2_italicfont_small_s</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_w.bmp">
+      <Name>shfo2_italicfont_small_w</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_small_y.bmp">
+      <Name>shfo2_italicfont_small_y</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_t.bmp">
+      <Name>shfo2_italicfont_t</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_w.bmp">
+      <Name>shfo2_italicfont_w</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_italicfont_x.bmp">
+      <Name>shfo2_italicfont_x</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_j.bmp">
+      <Name>shfo2_italicfont_j</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_p.bmp">
+      <Name>shfo2_italicfont_p</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_u.bmp">
+      <Name>shfo2_italicfont_u</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_small_j.bmp">
+      <Name>shfo2_italicfont_small_j</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_g.bmp">
+      <Name>shfo2_italicfont_g</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_questionmark.bmp">
+      <Name>shfo2_italicfont_questionmark</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_buttons_no1.bmp">
+      <Name>shfo2_buttons_no1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_buttons_no2.bmp">
+      <Name>shfo2_buttons_no2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_buttons_yes1.bmp">
+      <Name>shfo2_buttons_yes1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_buttons_yes2.bmp">
+      <Name>shfo2_buttons_yes2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_small_q.bmp">
+      <Name>shfo2_italicfont_small_q</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_arrowforward.bmp">
+      <Name>shfo2_arrowforward</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_explosion_0.bmp">
+      <Name>shfo2_explosion_0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_explosion_1.bmp">
+      <Name>shfo2_explosion_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_explosion_2.bmp">
+      <Name>shfo2_explosion_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_spell-level-selection_selected.bmp">
+      <Name>shfo2_spell-level-selection_selected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_spell-level-selection_unselected.bmp">
+      <Name>shfo2_spell-level-selection_unselected</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_spell-level-selection_redbar.bmp">
+      <Name>shfo2_spell-level-selection_redbar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_selectionbar2.bmp">
+      <Name>shfo2_selectionbar2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_selectionbar3.bmp">
+      <Name>shfo2_selectionbar3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_italicfont_small_x.bmp">
+      <Name>shfo2_italicfont_small_x</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_statsbar_left.bmp">
+      <Name>shfo2_statsbar_left</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_statsbar_middle0.bmp">
+      <Name>shfo2_statsbar_middle0</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_statsbar_middle1.bmp">
+      <Name>shfo2_statsbar_middle1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_statsbar_right.bmp">
+      <Name>shfo2_statsbar_right</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_statsbar_middle2.bmp">
+      <Name>shfo2_statsbar_middle2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_statsbar_middle3.bmp">
+      <Name>shfo2_statsbar_middle3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_statsbar_middle4.bmp">
+      <Name>shfo2_statsbar_middle4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="shfo2_statsbar_middle5.bmp">
+      <Name>shfo2_statsbar_middle5</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_arrowbackward.bmp">
+      <Name>shfo2_arrowbackward</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_smallfont_small_f.bmp">
+      <Name>shfo2_smallfont_small_f</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="shfo2_smallfont_small_y.bmp">
+      <Name>shfo2_smallfont_small_y</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_battlemenu_attack.bmp">
+      <Name>new_battlemenu_attack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_battlemenu_default.bmp">
+      <Name>new_battlemenu_default</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_battlemenu_item.bmp">
+      <Name>new_battlemenu_item</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_battlemenu_magic.bmp">
+      <Name>new_battlemenu_magic</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_battlemenu_stay.bmp">
+      <Name>new_battlemenu_stay</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_party_tassi.bmp">
+      <Name>new_party_tassi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_portrait_tassi.bmp">
+      <Name>new_portrait_tassi</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_party_jacob.bmp">
+      <Name>new_party_jacob</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_portrait_jacob.bmp">
+      <Name>new_portrait_jacob</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_party_caryn.bmp">
+      <Name>new_party_caryn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_portrait_caryn.bmp">
+      <Name>new_portrait_caryn</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_mountain.bmp">
+      <Name>new_terrain_mountain</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_forest.bmp">
+      <Name>new_terrain_forest</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_grassland.bmp">
+      <Name>new_terrain_grassland</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_hill.bmp">
+      <Name>new_terrain_hill</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_sea.bmp">
+      <Name>new_terrain_sea</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_path.bmp">
+      <Name>new_terrain_path</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_enemies_ninja.bmp">
+      <Name>new_enemies_ninja</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_items_ring.bmp">
+      <Name>new_items_ring</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_items_weapons_nothing.bmp">
+      <Name>new_items_weapons_nothing</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_items_weapons_staff.bmp">
+      <Name>new_items_weapons_staff</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_items_weapons_sword.bmp">
+      <Name>new_items_weapons_sword</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_enemies_banana.bmp">
+      <Name>new_enemies_banana</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_titlescreen.bmp">
+      <Name>new_titlescreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_italicfont_colon.bmp">
+      <Name>new_italicfont_colon</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_italicfont_comma.bmp">
+      <Name>new_italicfont_comma</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_italicfont_v.bmp">
+      <Name>new_italicfont_v</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_italicfont_small_z.bmp">
+      <Name>new_italicfont_small_z</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_portrait_eva.bmp">
+      <Name>new_portrait_eva</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_party_eva.bmp">
+      <Name>new_party_eva</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_items_weapons_arrow.bmp">
+      <Name>new_items_weapons_arrow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_terrain_wall.bmp">
+      <Name>new_terrain_wall</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_portrait_hans.bmp">
+      <Name>new_portrait_hans</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_party_hans.bmp">
+      <Name>new_party_hans</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_italicfont_q.bmp">
+      <Name>new_italicfont_q</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_enemies_witch.bmp">
+      <Name>new_enemies_witch</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_enemies_samurai.bmp">
+      <Name>new_enemies_samurai</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_portrait_monica.bmp">
+      <Name>new_portrait_monica</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_party_monica.bmp">
+      <Name>new_party_monica</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_items_medicalherb.bmp">
+      <Name>new_items_medicalherb</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_spells_blaze.bmp">
+      <Name>new_spells_blaze</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_spells_heal.bmp">
+      <Name>new_spells_heal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="new_enemies_russell.bmp">
+      <Name>new_enemies_russell</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="new_enemies_stanes.bmp">
+      <Name>new_enemies_stanes</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\v2.0\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

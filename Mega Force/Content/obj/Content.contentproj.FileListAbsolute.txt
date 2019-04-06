@@ -1,0 +1,3 @@
+C:\SF2Remake-Project\WindowsGame2\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\adok\SF2Remake\SF2Remake\SF2Remake-Project\WindowsGame2\Content\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\adok\SF2Remake\SF2Remake\SF2Remake-Project\WindowsGame2\Content\obj\x86\Release\ResolveAssemblyReference.cache
