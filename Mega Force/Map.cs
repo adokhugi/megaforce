@@ -214,6 +214,7 @@ namespace WindowsGame2
                 mapViable[i] = false;
         }
 
+        // 2023.04.03 Fixed bug
         public void CalcViable(float position, float move, bool flying, Party otherParty)
         {
             mapViable[(int)position] = true;
@@ -222,8 +223,10 @@ namespace WindowsGame2
             {
                 move--;
 
-                CalcViable_Helper(position - Size.X, move, flying, otherParty);
-                CalcViable_Helper(position + Size.X, move, flying, otherParty);
+                if ((position - MAPHEADERSIZE) - Size.X > 0)
+                    CalcViable_Helper(position - Size.X, move, flying, otherParty);
+                if ((position - MAPHEADERSIZE) + Size.X < Size.Y * Size.X)
+                    CalcViable_Helper(position + Size.X, move, flying, otherParty);
                 if ((position - MAPHEADERSIZE) % Size.X != 0)
                     CalcViable_Helper(position - 1, move, flying, otherParty);
                 if (position % Size.X != 0)
