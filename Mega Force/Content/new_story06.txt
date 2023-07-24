@@ -1,0 +1,22 @@
+After victory, the party searches the house for RUSSELL, but cannot find him. They only find a young woman, MONICA.
+MONICA: Thanks for liberating me! RUSSELL kept me imprisoned.
+TASSI: Where is RUSSELL?
+MONICA: RUSSELL left some days ago in order to travel to a person named STANES. I don't know exactly, but as far as I know he was invited by STANES to spend the holidays there.
+TASSI: Where is STANES located?
+MONICA: STANES is living in Rogia.
+TASSI: So, let's go to Rogia!
+MONICA: I'll go with you.
+MONICA the MAGE has joined the force.
+On their way to Rogia the party has to cross a bridge.
+GUARD: Stop! Crossing this bridge ain't free! You gotta pay a fee!
+TASSI: How much is it?
+GUARD: 10000 gold coins!
+TASSI: We cannot afford that.
+GUARD: Well, what a pity!
+TASSI: But we must cross the bridge.
+JACOB: Indeed. This bridge is the only way to Rogia.
+TASSI: Let's force our way through!
+GUARD: Alert! Intruders!
+Several villains appear.
+TASSI: Let's fight!
+

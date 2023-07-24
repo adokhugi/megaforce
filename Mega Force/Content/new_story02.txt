@@ -1,0 +1,15 @@
+TASSI: So, you NINJA fool, tell us: who sent you? Why did you attack poor HANS on the occasion of his wedding?
+NINJA: I won't tell you! We've promised our master not to betray him!
+TASSI: So somebody has sent you. I knew it. You did not attack HANS by accident. But who was it? If you don't tell his name, your action won't have a pedagogical effect. We won't know who we have to fear...
+JACOB: TASSI, stop it. See, he is dying. It's too late.
+TASSI: OK, so let's get back to HANS and EVA. Let's see how they are doing.
+JACOB: All right, Sir!
+TASSI, JACOB and CARYN are moving back to the wedding scene where they see EVA performing first aid.
+EVA: It seems as if it has been possible to stabilize HANS' vital parameters. Yet I think we should get to the hospital so that HANS can be fully cured! Will you come along with us?
+JACOB: Yeah, let's go!
+TASSI: Indeed! Let us go with EVA and bring HANS to the hospital.
+EVA the ACHR has joined the force.
+On their way to the hospital, the party gets ambushed by several villains.
+TASSI: Hurry, JACOB! Let's defeat 'em quickly so that we won't lose too much time!
+JACOB: All right, Sir!
+
