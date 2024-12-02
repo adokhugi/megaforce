@@ -35,8 +35,8 @@ namespace WindowsGame2
         const int ENOUGH_MONEY_TO_CONTINUE_ONCE = 500;
 
         // 2024.12.02 introduced constants
-        public const int PREFERREDBACKBUFFERWIDTH = 1024;
-        public const int PREFERREDBACKBUFFERHEIGHT = 768;
+        public const int PREFERREDBACKBUFFERWIDTH = 800;
+        public const int PREFERREDBACKBUFFERHEIGHT = 600;
 
         enum GameModes
         {
