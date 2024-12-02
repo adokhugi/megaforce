@@ -34,6 +34,10 @@ namespace WindowsGame2
         const int TEXTBOX_WIDTH = 30;
         const int ENOUGH_MONEY_TO_CONTINUE_ONCE = 500;
 
+        // 2024.12.02 introduced constants
+        public const int PREFERREDBACKBUFFERWIDTH = 800;    // 1024;
+        public const int PREFERREDBACKBUFFERHEIGHT = 600;   // 768;
+
         enum GameModes
         {
             // battlefield modes
@@ -263,20 +267,20 @@ namespace WindowsGame2
         int progress;
         Story story;
         string story_character;
-        Character jacob;
-        Character caryn;
-        Character tassi;
-        Character eva;
-        Character hans;
-        Character monica;
+        Character hero;
+        Character healer;
+        Character warrior;
+        Character archer;
+        Character knight;
+        Character mage;
         Item medicalHerb;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferWidth = 800;
-            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = PREFERREDBACKBUFFERWIDTH;
+            graphics.PreferredBackBufferHeight = PREFERREDBACKBUFFERHEIGHT;
             graphics.IsFullScreen = false;
         }
 
@@ -407,7 +411,8 @@ namespace WindowsGame2
             arrowbackward = new Arrow();
             arrowbackward.Texture = this.Content.Load<Texture2D>("shfo2_arrowbackward");
 
-            yesNoButtons = new YesNoButtons(new Vector2((800 - 2 * 60 - 40) / 2, 570 - textMessageBox.Size.Y - 40));
+            // 2024.12.02 introduced constants
+            yesNoButtons = new YesNoButtons(new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 2 * 60 - 40) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - textMessageBox.Size.Y - 40));
             yesNoButtons.TextureYes[0] = this.Content.Load<Texture2D>("shfo2_buttons_yes1");
             yesNoButtons.TextureYes[1] = this.Content.Load<Texture2D>("shfo2_buttons_yes2");
             yesNoButtons.TextureNo[0] = this.Content.Load<Texture2D>("shfo2_buttons_no1");
@@ -587,45 +592,45 @@ namespace WindowsGame2
 
             Item.TextureRing = this.Content.Load<Texture2D>("new_items_ring");
 
-            Character.TexturesJacob[0] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[1] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[2] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[3] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[4] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[5] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[6] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob[7] = this.Content.Load<Texture2D>("new_party_jacob");
-            Character.TexturesJacob_Portrait = this.Content.Load<Texture2D>("new_portrait_jacob");
+            Character.TexturesJacob[0] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[1] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[2] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[3] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[4] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[5] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[6] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob[7] = this.Content.Load<Texture2D>("new_party_hero");
+            Character.TexturesJacob_Portrait = this.Content.Load<Texture2D>("new_portrait_hero");
 
-            Character.TexturesCaryn[0] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[1] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[2] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[3] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[4] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[5] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[6] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn[7] = this.Content.Load<Texture2D>("new_party_caryn");
-            Character.TexturesCaryn_Portrait = this.Content.Load<Texture2D>("new_portrait_caryn");
+            Character.TexturesCaryn[0] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[1] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[2] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[3] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[4] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[5] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[6] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn[7] = this.Content.Load<Texture2D>("new_party_healer");
+            Character.TexturesCaryn_Portrait = this.Content.Load<Texture2D>("new_portrait_healer");
 
-            Character.TexturesTassi[0] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[1] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[2] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[3] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[4] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[5] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[6] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi[7] = this.Content.Load<Texture2D>("new_party_tassi");
-            Character.TexturesTassi_Portrait = this.Content.Load<Texture2D>("new_portrait_tassi");
+            Character.TexturesTassi[0] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[1] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[2] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[3] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[4] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[5] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[6] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi[7] = this.Content.Load<Texture2D>("new_party_warrior");
+            Character.TexturesTassi_Portrait = this.Content.Load<Texture2D>("new_portrait_warrior");
 
-            Character.TexturesEva[0] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[1] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[2] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[3] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[4] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[5] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[6] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva[7] = this.Content.Load<Texture2D>("new_party_eva");
-            Character.TexturesEva_Portrait = this.Content.Load<Texture2D>("new_portrait_eva");
+            Character.TexturesEva[0] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[1] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[2] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[3] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[4] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[5] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[6] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva[7] = this.Content.Load<Texture2D>("new_party_archer");
+            Character.TexturesEva_Portrait = this.Content.Load<Texture2D>("new_portrait_archer");
 
             Character.TexturesHans[0] = this.Content.Load<Texture2D>("new_party_hans");
             Character.TexturesHans[1] = this.Content.Load<Texture2D>("new_party_hans");
@@ -635,17 +640,17 @@ namespace WindowsGame2
             Character.TexturesHans[5] = this.Content.Load<Texture2D>("new_party_hans");
             Character.TexturesHans[6] = this.Content.Load<Texture2D>("new_party_hans");
             Character.TexturesHans[7] = this.Content.Load<Texture2D>("new_party_hans");
-            Character.TexturesHans_Portrait = this.Content.Load<Texture2D>("new_portrait_hans");
+            Character.TexturesHans_Portrait = this.Content.Load<Texture2D>("new_portrait_knight");
 
-            Character.TexturesMonica[0] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[1] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[2] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[3] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[4] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[5] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[6] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica[7] = this.Content.Load<Texture2D>("new_party_monica");
-            Character.TexturesMonica_Portrait = this.Content.Load<Texture2D>("new_portrait_monica");
+            Character.TexturesMonica[0] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[1] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[2] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[3] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[4] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[5] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[6] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica[7] = this.Content.Load<Texture2D>("new_party_mage");
+            Character.TexturesMonica_Portrait = this.Content.Load<Texture2D>("new_portrait_mage");
 
             Character.TexturesNinja[0] = this.Content.Load<Texture2D>("new_enemies_ninja");
             Character.TexturesNinja[1] = this.Content.Load<Texture2D>("new_enemies_ninja");
@@ -707,10 +712,11 @@ namespace WindowsGame2
             largeCharacterStatsMainBox.Size = new Vector2(418, 414);
             largeCharacterStatsKillsDefeatsBox.Size = new Vector2(portraitBox.Size.X, 192);
             largeCharacterStatsGoldBox.Size = new Vector2(portraitBox.Size.X, largeCharacterStatsMainBox.Size.Y - portraitBox.Size.Y - largeCharacterStatsKillsDefeatsBox.Size.Y);
-            portraitBox.Position = new Vector2((800 - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (600 - largeCharacterStatsMainBox.Size.Y) / 2);
-            largeCharacterStatsMainBox.Position = new Vector2((800 - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2 + portraitBox.Size.X, (600 - largeCharacterStatsMainBox.Size.Y) / 2);
-            largeCharacterStatsKillsDefeatsBox.Position = new Vector2((800 - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (600 - largeCharacterStatsMainBox.Size.Y) / 2 + portraitBox.Size.Y);
-            largeCharacterStatsGoldBox.Position = new Vector2((800 - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (600 - largeCharacterStatsMainBox.Size.Y) / 2 + portraitBox.Size.Y + largeCharacterStatsKillsDefeatsBox.Size.Y);
+            // 2024.12.02 introduced constants
+            portraitBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2);
+            largeCharacterStatsMainBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2 + portraitBox.Size.X, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2);
+            largeCharacterStatsKillsDefeatsBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2 + portraitBox.Size.Y);
+            largeCharacterStatsGoldBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2 + portraitBox.Size.Y + largeCharacterStatsKillsDefeatsBox.Size.Y);
 
             whoseStatsToBeDisplayed = new CharacterPointer();
 
@@ -741,18 +747,18 @@ namespace WindowsGame2
         private void SetUpInitialParty()
         {
             // characters
-            jacob = new Character("JACOB", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Sword"), null, null, null }, new bool[] { true, false, false, false });
-            caryn = new Character("CARYN", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Staff"), null, null, null }, new bool[] { true, false, false, false });
-            tassi = new Character("TASSI", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Sword"), null, null, null }, new bool[] { true, false, false, false });
-            eva = new Character("EVA", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Arrow"), null, null, null }, new bool[] { true, false, false, false });
-            hans = new Character("HANS", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Sword"), null, null, null }, new bool[] { true, false, false, false });
-            monica = new Character("MONICA", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Staff"), null, null, null }, new bool[] { true, false, false, false });
+            hero = new Character("JACOB", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Sword"), null, null, null }, new bool[] { true, false, false, false });
+            healer = new Character("CARYN", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Staff"), null, null, null }, new bool[] { true, false, false, false });
+            warrior = new Character("TASSI", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Sword"), null, null, null }, new bool[] { true, false, false, false });
+            archer = new Character("EVA", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Arrow"), null, null, null }, new bool[] { true, false, false, false });
+            knight = new Character("HANS", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Sword"), null, null, null }, new bool[] { true, false, false, false });
+            mage = new Character("MONICA", 1, 1, Character.PromotedStatuses.No, 0, 0, 0, new Item[] { new Item("Wooden", " Staff"), null, null, null }, new bool[] { true, false, false, false });
 
             // temporarily the party consists only of jacob, caryn and tassi
             party = new Party(3, CharacterPointer.Sides.Player);
-            party.Members[0] = jacob;
-            party.Members[1] = caryn;
-            party.Members[2] = tassi;
+            party.Members[0] = hero;
+            party.Members[1] = healer;
+            party.Members[2] = warrior;
 
             /*
             party.Members[3] = kazin;
@@ -7971,15 +7977,15 @@ namespace WindowsGame2
 
                 if (progress >= 2)
                 {
-                    party.Join(eva);
+                    party.Join(archer);
                 }
                 if (progress >= 4)
                 {
-                    party.Join(hans);
+                    party.Join(knight);
                 }
                 if (progress >= 6)
                 {
-                    party.Join(monica);
+                    party.Join(mage);
                 }
 
                 if (progress != 0)
@@ -8281,7 +8287,8 @@ namespace WindowsGame2
             positionInTextMessage.Column = 0;
             textMessageDelay = 0;
             textMessageCounter = 0;
-            textMessageBox.Position = new Vector2((800 - textMessageBox.Size.X) / 2, 570 - textMessageBox.Size.Y);
+            // 2024.12.02 introduced constants
+            textMessageBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - textMessageBox.Size.X) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - textMessageBox.Size.Y);
             arrowforward.Position = textMessageBox.Position + textMessageBox.Size - new Vector2(34, 30);
             //keyRelieved = false;
             textMessageContinueFlag = false;
@@ -8542,7 +8549,8 @@ namespace WindowsGame2
             positionInTextMessage.Column = 0;
             textMessageDelay = 0;
             textMessageCounter = 0;
-            textMessageBox.Position = new Vector2((800 - textMessageBox.Size.X) / 2, 570 - textMessageBox.Size.Y);
+            // 2024.12.02 introduced constants
+            textMessageBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - textMessageBox.Size.X) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - textMessageBox.Size.Y);
             arrowforward.Position = textMessageBox.Position + textMessageBox.Size - new Vector2(34, 30);
             //keyRelieved = false;
             textMessageContinueFlag = false;
@@ -10461,7 +10469,8 @@ namespace WindowsGame2
             positionInTextMessage.Row = 0;
             positionInTextMessage.Column = 0;
             textMessageDelay = 0;
-            textMessageBox.Position = new Vector2((800 - textMessageBox.Size.X) / 2, 570 - textMessageBox.Size.Y);
+            // 2024.12.02 introduced constants
+            textMessageBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - textMessageBox.Size.X) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - textMessageBox.Size.Y);
             arrowforward.Position = textMessageBox.Position + textMessageBox.Size - new Vector2(34, 30);
             //keyRelieved = false;
             textMessageContinueFlag = false;
@@ -10568,13 +10577,6 @@ namespace WindowsGame2
                 moveOut = true;
                 EnterDisplayTextMessageMode();
                 return;
-            }
-
-            // 2015.09.18 This should fix a bug causing defeated party members to disappear
-            for (int i = 0; i < party.NumPartyMembers; i++)
-            {
-                party.Members[i].Alive = true;
-                party.Members[i].HitPoints = party.Members[i].MaxHitPoints;
             }
 
             returnGameMode = GameModes.EndOfBigBattleMode;
@@ -10762,12 +10764,12 @@ namespace WindowsGame2
                 gold = 256 * saveState[156 + saveState[156] + 2] + saveState[156 + saveState[156] + 1];
 
                 // 2015.06.27 Also store character levels in savegame
-                jacob.Level = saveState[156 + saveState[156] + 3]; 
-                caryn.Level = saveState[156 + saveState[156] + 4]; 
-                tassi.Level = saveState[156 + saveState[156] + 5]; 
-                eva.Level = saveState[156 + saveState[156] + 6]; 
-                hans.Level = saveState[156 + saveState[156] + 7];
-                monica.Level = saveState[156 + saveState[156] + 8]; 
+                hero.Level = saveState[156 + saveState[156] + 3]; 
+                healer.Level = saveState[156 + saveState[156] + 4]; 
+                warrior.Level = saveState[156 + saveState[156] + 5]; 
+                archer.Level = saveState[156 + saveState[156] + 6]; 
+                knight.Level = saveState[156 + saveState[156] + 7];
+                mage.Level = saveState[156 + saveState[156] + 8]; 
             }
             else
             {
@@ -10793,12 +10795,12 @@ namespace WindowsGame2
             saveState[156 + saveState[156] + 2] = (byte) ((gold / 256) % 256);
 
             // 2015.06.27 Also store character levels in savegame
-            saveState[156 + saveState[156] + 3] = (byte)jacob.Level;
-            saveState[156 + saveState[156] + 4] = (byte)caryn.Level;
-            saveState[156 + saveState[156] + 5] = (byte)tassi.Level;
-            saveState[156 + saveState[156] + 6] = (byte)eva.Level;
-            saveState[156 + saveState[156] + 7] = (byte)hans.Level;
-            saveState[156 + saveState[156] + 8] = (byte)monica.Level;
+            saveState[156 + saveState[156] + 3] = (byte)hero.Level;
+            saveState[156 + saveState[156] + 4] = (byte)healer.Level;
+            saveState[156 + saveState[156] + 5] = (byte)warrior.Level;
+            saveState[156 + saveState[156] + 6] = (byte)archer.Level;
+            saveState[156 + saveState[156] + 7] = (byte)knight.Level;
+            saveState[156 + saveState[156] + 8] = (byte)mage.Level;
 
             for (i = 156 + saveState[156] + 9; i < 4096; i++)
                 saveState[i] = (byte) random.Next(0, 255);
@@ -10899,8 +10901,8 @@ namespace WindowsGame2
         {
             GameMode = GameModes.EndOfBigBattleMode;
             // In this game, the exhausted are automatically healed after each battle.
-            // party.RegenerateFully();
-            // This function is already called at another place, so we need not call it again.
+            // 2024.12.02 The healing was done at another place, which was wrong because it caused the "fading out bug" (dead characters appeared again when the battle was fading out)
+            party.RegenerateFully();
             party.UnBoost();
             party.UnAttackBoost();
             if (battleWon)
@@ -10918,7 +10920,8 @@ namespace WindowsGame2
             portraitBox.Size = new Vector2(160, 160);
             memberMenuDisplayStatsBox.Size = new Vector2(418, 208);
             memberMenuCharacterSelectionBox.Size = new Vector2(portraitBox.Size.X + memberMenuDisplayStatsBox.Size.X, 208);
-            portraitBox.Position = new Vector2((800 - memberMenuDisplayStatsBox.Size.X - portraitBox.Size.X) / 2, (600 - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2);
+            // 2024.12.02 introduced constants
+            portraitBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - memberMenuDisplayStatsBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2);
             memberMenuDisplayStatsBox.Position = new Vector2(portraitBox.Position.X + portraitBox.Size.X, portraitBox.Position.Y);
             memberMenuCharacterSelectionBox.Position = new Vector2(portraitBox.Position.X, (600 - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2 + memberMenuDisplayStatsBox.Size.Y);
         }
@@ -10936,7 +10939,7 @@ namespace WindowsGame2
 
                 case 1:
                     story = new Story(@"Content\\new_story02.txt");
-                    party.Join(eva);
+                    party.Join(archer);
                     UpdateState_StoryMode();
                     break;
 
@@ -10947,8 +10950,8 @@ namespace WindowsGame2
 
                 case 3:
                     story = new Story(@"Content\\new_story04.txt");
-                    party.Join(hans);
-                    hans.Level = 2;
+                    party.Join(knight);
+                    knight.Level = 2;
                     UpdateState_StoryMode();
                     break;
 
@@ -10959,8 +10962,8 @@ namespace WindowsGame2
 
                 case 5:
                     story = new Story(@"Content\\new_story06.txt");
-                    party.Join(monica);
-                    monica.Level = 4;
+                    party.Join(mage);
+                    mage.Level = 4;
                     UpdateState_StoryMode();
                     break;
 

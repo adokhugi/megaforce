@@ -10,10 +10,11 @@ namespace WindowsGame2
 {
     class Map
     {
-        public const int MAXX = 14;
-        public const int MAXY = 13;
         public const int TILESIZEX = 60;
         public const int TILESIZEY = 48;
+        // 2024.12.02 introduced constants
+        public const int MAXX = 1 + Game1.PREFERREDBACKBUFFERWIDTH / TILESIZEX;
+        public const int MAXY = 1 + Game1.PREFERREDBACKBUFFERHEIGHT / TILESIZEY;
         public const int MAXMAPSIZE = 2500;
         public const int MAPHEADERSIZE = 2;
         public const int MAXPATHLENGTH = 50;
@@ -345,7 +346,12 @@ namespace WindowsGame2
                         if (_blinkStatus && mapMarked[(int)pointer])
                             opacity -= OPACITY_FULL - OPACITY_LESS;
                     }
-                    spriteBatch.Draw(Texture[(int)mapDisplay[(int)pointer]], new Vector2(tempOffset.X + j * TILESIZEX, tempOffset.Y + i * TILESIZEY), new Color(opacity, opacity, opacity, opacity));
+                    // 2014.12.02 fix to enable higher resolutions than the default 800x600
+                    var texture = Texture[(int)mapDisplay[(int)pointer]];
+                    if (texture != null)
+                    {
+                        spriteBatch.Draw(texture, new Vector2(tempOffset.X + j * TILESIZEX, tempOffset.Y + i * TILESIZEY), new Color(opacity, opacity, opacity, opacity));
+                    }
                     pointer++;
                 }
                 pointer += Size.X - frame.X;
@@ -773,7 +779,8 @@ namespace WindowsGame2
                 }
             }
 
-            return backUpPosition;
+            // 2024.12.02 this should prevent occasional bugs where the enemy moves erratically and the game crashes
+            return backUpPosition != -1 ? backUpPosition : (int)enemies.Members[enemies.MemberOnTurn].Position;
         }
 
         public void MarkViable()
