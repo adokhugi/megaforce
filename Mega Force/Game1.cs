@@ -713,8 +713,8 @@ namespace WindowsGame2
             largeCharacterStatsKillsDefeatsBox.Size = new Vector2(portraitBox.Size.X, 192);
             largeCharacterStatsGoldBox.Size = new Vector2(portraitBox.Size.X, largeCharacterStatsMainBox.Size.Y - portraitBox.Size.Y - largeCharacterStatsKillsDefeatsBox.Size.Y);
             // 2024.12.02 introduced constants
-            portraitBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2);
             largeCharacterStatsMainBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2 + portraitBox.Size.X, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2);
+            portraitBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, largeCharacterStatsMainBox.Position.Y);
             largeCharacterStatsKillsDefeatsBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2 + portraitBox.Size.Y);
             largeCharacterStatsGoldBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - largeCharacterStatsMainBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - largeCharacterStatsMainBox.Size.Y) / 2 + portraitBox.Size.Y + largeCharacterStatsKillsDefeatsBox.Size.Y);
 
@@ -10943,11 +10943,10 @@ namespace WindowsGame2
             GameMode = GameModes.MemberMenuMode;
             portraitBox.Size = new Vector2(160, 160);
             memberMenuDisplayStatsBox.Size = new Vector2(418, 208);
-            // 2024.12.02 introduced constants
+            // 2024.12.02 introduced constants and fixed the position logics
             memberMenuCharacterSelectionBox.Size = new Vector2(portraitBox.Size.X + memberMenuDisplayStatsBox.Size.X, (Game1.PREFERREDBACKBUFFERHEIGHT - 184) / 2);
-            portraitBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - memberMenuDisplayStatsBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2);
-            memberMenuDisplayStatsBox.Position = new Vector2(portraitBox.Position.X + portraitBox.Size.X, portraitBox.Position.Y);
-            memberMenuCharacterSelectionBox.Position = new Vector2(portraitBox.Position.X, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2 + memberMenuDisplayStatsBox.Size.Y);
+            memberMenuDisplayStatsBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - memberMenuDisplayStatsBox.Size.X - portraitBox.Size.X) / 2 + portraitBox.Size.X, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2);
+            memberMenuCharacterSelectionBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - memberMenuDisplayStatsBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2 + memberMenuDisplayStatsBox.Size.Y);
         }
 
         private void EnterStoryMode()
