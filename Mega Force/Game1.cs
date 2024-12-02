@@ -35,8 +35,8 @@ namespace WindowsGame2
         const int ENOUGH_MONEY_TO_CONTINUE_ONCE = 500;
 
         // 2024.12.02 introduced constants
-        public const int PREFERREDBACKBUFFERWIDTH = 800;    // 1024;
-        public const int PREFERREDBACKBUFFERHEIGHT = 600;   // 768;
+        public const int PREFERREDBACKBUFFERWIDTH = 1024;
+        public const int PREFERREDBACKBUFFERHEIGHT = 768;
 
         enum GameModes
         {
@@ -897,7 +897,7 @@ namespace WindowsGame2
                 if (party.Members[party.MemberOnTurn].Alive)
                 {
                     backUpPosition = party.Members[party.MemberOnTurn].Position;
-                    characterStatsBox.Position = new Vector2(0, 30);
+                    characterStatsBox.Position = new Vector2(0, (Game1.PREFERREDBACKBUFFERHEIGHT - 540) / 2);
                     EnterPlayerMoveTransitionMode();
                 }
                 else
@@ -919,7 +919,7 @@ namespace WindowsGame2
                     if (enemies.Members[enemies.MemberOnTurn].Alive)
                     {
                         backUpPosition = enemies.Members[enemies.MemberOnTurn].Position;
-                        characterStatsBox.Position = new Vector2(0, 30);
+                        characterStatsBox.Position = new Vector2(0, (Game1.PREFERREDBACKBUFFERHEIGHT - 540) / 2);
                         EnterEnemyMoveTransitionMode();
                     }
                     else
@@ -2694,7 +2694,8 @@ namespace WindowsGame2
                 characterStatsBoxWidth = barsWidth + 7 * (int)smallFont.Size.X;
             
             characterStatsBox.Size = new Vector2(Box.Texture_TopLeft.Width + characterStatsBoxWidth + Box.Texture_TopRight.Width + 10, 80);
-            characterStatsBox.Position = new Vector2(770 - characterStatsBox.Size.X, characterStatsBox.Position.Y);
+            // 2024.12.02 introduced constants
+            characterStatsBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - characterStatsBox.Size.X, characterStatsBox.Position.Y);
             characterStatsBox.Draw(spriteBatch);
 
             smallFont.Position = new Vector2(characterStatsBox.Position.X + 20, characterStatsBox.Position.Y + 15);
@@ -2733,7 +2734,8 @@ namespace WindowsGame2
         {
             Vector2 backUpCharacterStatsBoxSize = characterStatsBox.Size;
             Vector2 backUpCharacterStatsBoxPosition = characterStatsBox.Position;
-            characterStatsBox.Position = new Vector2(characterStatsBox.Position.X, 570 - characterStatsBox.Size.Y);
+            // 2024.12.02 introduced constants
+            characterStatsBox.Position = new Vector2(characterStatsBox.Position.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - characterStatsBox.Size.Y);
             switch (target.BelongsToSide)
             {
                 case CharacterPointer.Sides.CPU_Opponents:
@@ -2753,7 +2755,8 @@ namespace WindowsGame2
             Vector2 backUpCharacterStatsBoxSize = characterStatsBox.Size;
             Vector2 backUpCharacterStatsBoxPosition = characterStatsBox.Position;
             characterStatsBox.Size = new Vector2(Box.Texture_TopLeft.Width + (party.Members[map.CharacterLocatedAt(selectionBar.PositionInMap(map), party)].CharClass.Length + party.Members[map.CharacterLocatedAt(selectionBar.PositionInMap(map), party)].Name.Length + 3) * smallFont.Size.X + Box.Texture_TopRight.Width + 10, 80);
-            characterStatsBox.Position = new Vector2(770 - characterStatsBox.Size.X, 570 - characterStatsBox.Size.Y);
+            // 2024.12.02 introduced constants
+            characterStatsBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - characterStatsBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - characterStatsBox.Size.Y);
             Draw_CharacterStatsBox(party.Members[map.CharacterLocatedAt(selectionBar.PositionInMap(map), party)], CharacterPointer.Sides.Player);
             characterStatsBox.Size = backUpCharacterStatsBoxSize;
             characterStatsBox.Position = backUpCharacterStatsBoxPosition;
@@ -8119,9 +8122,10 @@ namespace WindowsGame2
             else
                 battleMenu.CurrentState = BattleMenu.States.StaySelected1;
 
-            battleMenu.Position = new Vector2(310f, 480f);
+            // 2024.12.02 introduced constants
+            battleMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
             captionBox.Size = new Vector2(160, 48);
-            captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+            captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
         }
 
         private void EnterBattleMenuMoveInMode()
@@ -8144,8 +8148,9 @@ namespace WindowsGame2
             else
                 battleMenu.CurrentState = BattleMenu.States.StaySelected1;
 
-            tempMenuPosition = new Vector2(310f, 600f);
-            battleMenu.Position = new Vector2(310f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            battleMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
         }
 
         private void EnterLargeCharacterStatsMode()
@@ -8180,37 +8185,42 @@ namespace WindowsGame2
         {
             GameMode = GameModes.GeneralMenuMode;
             captionBox.Size = new Vector2(160, 48);
-            captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+            // 2024.12.02 introduced constants
+            captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
         }
 
         private void EnterGeneralMenuMoveInMode()
         {
             GameMode = GameModes.GeneralMenuMoveInMode;
             generalMenu.CurrentState = GeneralMenu.States.MemberSelected2;
-            tempMenuPosition = new Vector2(310f, 600f);
-            generalMenu.Position = new Vector2(310f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            generalMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
         }
 
         private void EnterItemMenuMode()
         {
             GameMode = GameModes.ItemMenuMode;
             captionBox.Size = new Vector2(160, 48);
-            captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+            // 2024.12.02 introduced constants
+            captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
         }
 
         private void EnterItemMenuMoveOutMode()
         {
             GameMode = GameModes.ItemMenuMoveOutMode;
-            itemMenu.Position = new Vector2(310f, 600f);
-            tempMenuPosition = new Vector2(310f, 480f);
+            // 2024.12.02 introduced constants
+            itemMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
         }
 
         private void EnterItemMenuMoveInMode()
         {
             GameMode = GameModes.ItemMenuMoveInMode;
             itemMenu.CurrentState = ItemMenu.States.UseSelected2;
-            tempMenuPosition = new Vector2(310f, 600f);
-            itemMenu.Position = new Vector2(310f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            itemMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
             map.EmptyMapMarked();
         }
 
@@ -8220,7 +8230,8 @@ namespace WindowsGame2
             if (battleMenu.CurrentState == BattleMenu.States.ItemSelected1 || battleMenu.CurrentState == BattleMenu.States.ItemSelected2)
             {
                 captionBox.Size = new Vector2(200, 80);
-                captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+                // 2024.12.02 introduced constants
+                captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
                 map.EmptyMapMarked();
                 itemMenu.CurrentState = ItemMenu.States.UseSelected1;
                 // In this game, items can only be used, not given, equipped or discarded.
@@ -8257,7 +8268,8 @@ namespace WindowsGame2
             else if (battleMenu.CurrentState == BattleMenu.States.MagicSelected1 || battleMenu.CurrentState == BattleMenu.States.MagicSelected2)
             {
                 captionBox.Size = new Vector2(160, 80);
-                captionBox.Position = new Vector2(770 - 200, 570 - 80);
+                // 2024.12.02 introduced constants
+                captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - 200, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - 80);
                 map.EmptyMapMarked();
                 for (int i = party.Members[party.MemberOnTurn].MagicSpells[0].MinRange[party.Members[party.MemberOnTurn].MagicSpells[0].Level - 1]; i <= party.Members[party.MemberOnTurn].MagicSpells[0].MaxRange[party.Members[party.MemberOnTurn].MagicSpells[0].Level - 1]; i++)
                     map.MarkFieldsWithDistance(party.Members[party.MemberOnTurn].Position, i);
@@ -8268,8 +8280,9 @@ namespace WindowsGame2
         {
             GameMode = GameModes.ItemMagicSelectionMenuMoveInMode;
             itemMagicSelectionMenu.CurrentState = ItemMagicSelectionMenu.States.TopSelected2;
-            tempMenuPosition = new Vector2(340f, 600f);
-            itemMagicSelectionMenu.Position = new Vector2(340f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            itemMagicSelectionMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
             selectedItemNumber = 0;
             selectedSpellNumber = 0;
         }
@@ -8277,8 +8290,9 @@ namespace WindowsGame2
         private void EnterItemMagicSelectionMenuMoveOutMode()
         {
             GameMode = GameModes.ItemMagicSelectionMenuMoveOutMode;
-            tempMenuPosition = new Vector2(340f, 480f);
-            itemMagicSelectionMenu.Position = new Vector2(340f, 600f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
+            itemMagicSelectionMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
         }
 
         private void EnterDisplayTextMessageMode()
@@ -8336,7 +8350,8 @@ namespace WindowsGame2
         {
             GameMode = GameModes.SwapItemMode;
             captionBox.Size = new Vector2(200, 80);
-            captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+            // 2024.12.02 introduced constants
+            captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
         }
 
         private void EnterSwapItemMoveInMode()
@@ -8344,24 +8359,27 @@ namespace WindowsGame2
             GameMode = GameModes.SwapItemMoveInMode;
             swapMenu.CurrentState = ItemMagicSelectionMenu.States.TopSelected2;
             selectedSwapItemNumber = 0;
-            tempMenuPosition = new Vector2(340f, 600f);
-            swapMenu.Position = new Vector2(340f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            swapMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
         }
 
         private void EnterSwapItemMoveOutMode()
         {
             GameMode = GameModes.SwapItemMoveOutMode;
-            tempMenuPosition = new Vector2(340f, 480f);
-            swapMenu.Position = new Vector2(340f, 600f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
+            swapMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
         }
 
         private void EnterEquipWeaponMode()
         {
             GameMode = GameModes.EquipWeaponMode;
             captionBox.Size = new Vector2(200, 80);
-            captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+            // 2024.12.02 introduced constants
+            captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
             equipSpecsBox.Size = new Vector2(200, 142);
-            equipSpecsBox.Position = new Vector2(30, 570 - equipSpecsBox.Size.Y);
+            equipSpecsBox.Position = new Vector2(30, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - equipSpecsBox.Size.Y);
             backUpEquippedWeapon = party.Members[party.MemberOnTurn].GetEquippedWeapon();
             party.Members[party.MemberOnTurn].Unequip(backUpEquippedWeapon);
             party.Members[party.MemberOnTurn].Equip(weapons[selectedWeaponNumber]);
@@ -8403,24 +8421,27 @@ namespace WindowsGame2
                 equipWeaponMenu.CurrentState = ItemMagicSelectionMenu.States.BottomSelected2;
                 selectedWeaponNumber = 3;
             }
-            tempMenuPosition = new Vector2(340f, 600f);
-            equipWeaponMenu.Position = new Vector2(340f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            equipWeaponMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
         }
 
         private void EnterEquipWeaponMoveOutMode()
         {
             GameMode = GameModes.EquipWeaponMoveOutMode;
-            tempMenuPosition = new Vector2(340f, 480f);
-            equipWeaponMenu.Position = new Vector2(340f, 600f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
+            equipWeaponMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
         }
 
         private void EnterEquipRingMode()
         {
             GameMode = GameModes.EquipRingMode;
             captionBox.Size = new Vector2(200, 80);
-            captionBox.Position = new Vector2(770 - captionBox.Size.X, 570 - captionBox.Size.Y);
+            // 2024.12.02 introduced constants
+            captionBox.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - captionBox.Size.X, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - captionBox.Size.Y);
             equipSpecsBox.Size = new Vector2(200, 142);
-            equipSpecsBox.Position = new Vector2(30, 570 - equipSpecsBox.Size.Y);
+            equipSpecsBox.Position = new Vector2(30, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - equipSpecsBox.Size.Y);
             backUpEquippedRing = party.Members[party.MemberOnTurn].GetEquippedRing();
             party.Members[party.MemberOnTurn].Unequip(backUpEquippedRing);
             party.Members[party.MemberOnTurn].Equip(rings[selectedRingNumber]);
@@ -8462,15 +8483,17 @@ namespace WindowsGame2
                 equipRingMenu.CurrentState = ItemMagicSelectionMenu.States.BottomSelected2;
                 selectedRingNumber = 3;
             }
-            tempMenuPosition = new Vector2(340f, 600f);
-            equipRingMenu.Position = new Vector2(340f, 480f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
+            equipRingMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
         }
 
         private void EnterEquipRingMoveOutMode()
         {
             GameMode = GameModes.EquipRingMoveOutMode;
-            tempMenuPosition = new Vector2(340f, 480f);
-            equipRingMenu.Position = new Vector2(340f, 600f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
+            equipRingMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 120) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
         }
 
         private void EnterPlayerBattleMode()
@@ -8569,7 +8592,8 @@ namespace WindowsGame2
             GameMode = GameModes.MagicLevelSelectionMode;
             selectedMagicLevel = party.Members[party.MemberOnTurn].MagicSpells[selectedSpellNumber].Level;
             Spell.CurrentState = 1;
-            redbar.Position = new Vector2(770 - 200, 570 - 80) + new Vector2(13, 24);
+            // 2024.12.02 introduced constants
+            redbar.Position = new Vector2(Game1.PREFERREDBACKBUFFERWIDTH - 30 - 200, Game1.PREFERREDBACKBUFFERHEIGHT - 30 - 80) + new Vector2(13, 24);
         }
 
         private void EnterEnemyMoveTransitionMode()
@@ -10919,11 +10943,11 @@ namespace WindowsGame2
             GameMode = GameModes.MemberMenuMode;
             portraitBox.Size = new Vector2(160, 160);
             memberMenuDisplayStatsBox.Size = new Vector2(418, 208);
-            memberMenuCharacterSelectionBox.Size = new Vector2(portraitBox.Size.X + memberMenuDisplayStatsBox.Size.X, 208);
             // 2024.12.02 introduced constants
+            memberMenuCharacterSelectionBox.Size = new Vector2(portraitBox.Size.X + memberMenuDisplayStatsBox.Size.X, (Game1.PREFERREDBACKBUFFERHEIGHT - 184) / 2);
             portraitBox.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - memberMenuDisplayStatsBox.Size.X - portraitBox.Size.X) / 2, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2);
             memberMenuDisplayStatsBox.Position = new Vector2(portraitBox.Position.X + portraitBox.Size.X, portraitBox.Position.Y);
-            memberMenuCharacterSelectionBox.Position = new Vector2(portraitBox.Position.X, (600 - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2 + memberMenuDisplayStatsBox.Size.Y);
+            memberMenuCharacterSelectionBox.Position = new Vector2(portraitBox.Position.X, (Game1.PREFERREDBACKBUFFERHEIGHT - memberMenuDisplayStatsBox.Size.Y - memberMenuCharacterSelectionBox.Size.Y) / 2 + memberMenuDisplayStatsBox.Size.Y);
         }
 
         private void EnterStoryMode()
@@ -11030,8 +11054,9 @@ namespace WindowsGame2
         private void LeaveBattleMenuMode()
         {
             GameMode = GameModes.BattleMenuMoveOutMode;
-            tempMenuPosition = new Vector2(310f, 480f);
-            battleMenu.Position = new Vector2(310f, 600f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
+            battleMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
         }
 
         private void LeaveBattleMenuMoveOutMode()
@@ -11047,8 +11072,9 @@ namespace WindowsGame2
         private void LeaveGeneralMenuMode()
         {
             GameMode = GameModes.GeneralMenuMoveOutMode;
-            tempMenuPosition = new Vector2(310f, 480f);
-            generalMenu.Position = new Vector2(310f, 600f);
+            // 2024.12.02 introduced constants
+            tempMenuPosition = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT - 120);
+            generalMenu.Position = new Vector2((Game1.PREFERREDBACKBUFFERWIDTH - 180) / 2, Game1.PREFERREDBACKBUFFERHEIGHT);
         }
 
         private void UseItem()
