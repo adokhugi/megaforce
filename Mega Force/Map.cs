@@ -346,7 +346,7 @@ namespace WindowsGame2
                         if (_blinkStatus && mapMarked[(int)pointer])
                             opacity -= OPACITY_FULL - OPACITY_LESS;
                     }
-                    // 2014.12.02 fix to enable higher resolutions than the default 800x600
+                    // 2024.12.02 fix to enable higher resolutions than the default 800x600
                     var texture = Texture[(int)mapDisplay[(int)pointer]];
                     if (texture != null)
                     {
